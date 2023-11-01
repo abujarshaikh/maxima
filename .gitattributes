@@ -1,0 +1,34 @@
+*.wxmx binary
+*.wxm linguist-language=maxima-session
+*.wxmx linguist-language=maxima-session
+art/*/*.h linguist-generated
+src/invalidImage.h linguist-generated
+src/precomp.h linguist-language=C++
+examples/*.h linguist-generated
+info/wxmaxima.*.html linguist-generated
+info/wxmaxima.*.md linguist-generated
+info/*.hhk linguist-generated
+data/*.h linguist-generated
+src/nanoSVG/* linguist-vendored
+src/stx/* linguist-vendored
+wxmaxima-local text eol=lf
+*.sh text eol=lf
+*.wxm text eol=lf
+.gitignore text working-tree-encoding=UTF-8 eol=lf
+.gitattributes text working-tree-encoding=UTF-8 eol=lf
+*.cpp text working-tree-encoding=UTF-8 eol=lf
+*.h text working-tree-encoding=UTF-8 eol=lf
+*.rc text working-tree-encoding=UTF-8 eol=lf
+*.po text working-tree-encoding=UTF-8 eol=lf
+*.xml text working-tree-encoding=UTF-8 eol=lf
+*.desktop text working-tree-encoding=UTF-8 eol=lf
+AUTHORS          text working-tree-encoding=UTF-8 eol=lf
+COPYING          text working-tree-encoding=UTF-8 eol=lf
+ChangeLog        text working-tree-encoding=UTF-8 eol=lf
+*/ChangeLog      text working-tree-encoding=UTF-8 eol=lf
+checksums.cmake  text working-tree-encoding=UTF-8 eol=lf
+README           text working-tree-encoding=UTF-8 eol=lf
+*/README         text working-tree-encoding=UTF-8 eol=lf
+*.in             text working-tree-encoding=UTF-8 eol=lf
+*.txt            text working-tree-encoding=UTF-8 eol=lf
+*.xpm            text working-tree-encoding=UTF-8 eol=lf
