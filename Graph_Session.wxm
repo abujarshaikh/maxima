@@ -1,0 +1,173 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Working with graphs in Maxima
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+I have started this without having taken a course in graph theory before.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Graphs with zero or single argument
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+There is an analogue of the empty list, set or matrix; that are new_graph() and empty_graph (n) -empty graph with n vertices-.
+
+Some of the graphs with sero or single argument are random.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(random_tree (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(path_graph (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(cycle_graph (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(wheel_graph(10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(complete_graph (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(heawood_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph( frucht_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(clebsch_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(flower_snark (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(grotzch_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(tutte_graph());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(random_tournament (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Graphs related to polytopes
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(icosahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_cube_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(snub_cube_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_tetrahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(snub_dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_icosahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(icosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(small_rhombicuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(small_rhombicosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(great_rhombicosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(great_rhombicuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(cube_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* The documentation does not say that the function is of zero argument, but this works */
+draw_graph(cuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
