@@ -92,8 +92,18 @@ Graphs related to polytopes
    [wxMaxima: subsect end   ] */
 
 
+/* [wxMaxima: comment start ]
+Here are shown these graphs and a image from their adjacency matrices.
+   [wxMaxima: comment end   ] */
+
+
 /* [wxMaxima: input   start ] */
 draw_graph(dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(dodecahedron_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -103,7 +113,17 @@ draw_graph(icosahedron_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(icosahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(truncated_cube_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_cube_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -113,7 +133,17 @@ draw_graph(snub_cube_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(snub_cube_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(truncated_tetrahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_tetrahedron_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -123,7 +153,17 @@ draw_graph(truncated_dodecahedron_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_dodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(snub_dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(snub_dodecahedron_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -133,7 +173,17 @@ draw_graph(truncated_icosahedron_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_icosahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(icosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(icosidodecahedron_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -143,12 +193,7 @@ draw_graph(small_rhombicuboctahedron_graph ());
 
 
 /* [wxMaxima: input   start ] */
-draw_graph(small_rhombicosidodecahedron_graph ());
-/* [wxMaxima: input   end   ] */
-
-
-/* [wxMaxima: input   start ] */
-draw_graph(great_rhombicosidodecahedron_graph ());
+wxdraw2d(image(adjacency_matrix(small_rhombicuboctahedron_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -158,13 +203,48 @@ draw_graph(great_rhombicuboctahedron_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(great_rhombicuboctahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(small_rhombicosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(small_rhombicosidodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(great_rhombicosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(great_rhombicosidodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(cube_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(cube_graph (4)),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
 /* [wxMaxima: input   start ] */
 /* The documentation does not say that the function is of zero argument, but this works */
 draw_graph(cuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(cuboctahedron_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
