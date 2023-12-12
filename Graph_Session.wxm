@@ -53,7 +53,27 @@ draw_graph(complete_graph (10));
 
 
 /* [wxMaxima: input   start ] */
+draw_graph(flower_snark (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(random_tournament (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Special graphs with zero argument
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(heawood_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(heawood_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -63,12 +83,17 @@ draw_graph( frucht_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(frucht_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(clebsch_graph ());
 /* [wxMaxima: input   end   ] */
 
 
 /* [wxMaxima: input   start ] */
-draw_graph(flower_snark (10));
+wxdraw2d(image(adjacency_matrix(clebsch_graph ()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
@@ -78,12 +103,17 @@ draw_graph(grotzch_graph ());
 
 
 /* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(grotzch_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
 draw_graph(tutte_graph());
 /* [wxMaxima: input   end   ] */
 
 
 /* [wxMaxima: input   start ] */
-draw_graph(random_tournament (10));
+wxdraw2d(image(adjacency_matrix(tutte_graph()),0,0,30,30));
 /* [wxMaxima: input   end   ] */
 
 
