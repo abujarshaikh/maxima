@@ -21,7 +21,7 @@ Graphs with zero or single argument
 
 
 /* [wxMaxima: comment start ]
-There is an analogue of the empty list, set or matrix; that are new_graph() and empty_graph (n) -empty graph with n vertices-.
+There is an analogue of the empty list, set or matrix; that is new_graph().
 
 Some of the graphs with sero or single argument are random.
    [wxMaxima: comment end   ] */
@@ -279,6 +279,46 @@ wxdraw2d(image(adjacency_matrix(cuboctahedron_graph ()),0,0,30,30));
 
 
 /* [wxMaxima: section start ]
+Complete bipartite graphs and trees
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+The complete bipartite graphs of the form complete_bipartite_graph (1, n) with n a positive integer are trees (actually, they are star graphs).
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_tree(complete_bipartite_graph(1,i)),i,20);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Complement graph
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Edgeless graphs and complete graphs
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+The complement graph of and edgeless graph is a complete graph, and viceversa.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_isomorphic(complement_graph(empty_graph(i)),complete_graph(i)),i,20);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(complement_graph(empty_graph(5)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
 The line graph of a graph
    [wxMaxima: section end   ] */
 
@@ -331,7 +371,7 @@ wxdraw(
 
 
 /* [wxMaxima: input   start ] */
-is_isomorphic(line_graph (cycle_graph(3)),cycle_graph(3));
+makelist(is_isomorphic(line_graph (cycle_graph(i)),cycle_graph(i)),i,3,10);
 /* [wxMaxima: input   end   ] */
 
 
@@ -359,7 +399,7 @@ wxdraw(
 
 
 /* [wxMaxima: input   start ] */
-is_isomorphic(line_graph (path_graph(2)),empty_graph(1));
+makelist(is_isomorphic(line_graph (path_graph(i+1)),path_graph(i)),i,10);
 /* [wxMaxima: input   end   ] */
 
 
@@ -373,7 +413,37 @@ wxdraw(
 
 
 /* [wxMaxima: input   start ] */
-is_isomorphic(line_graph (complete_bipartite_graph (1, 4)),complete_graph(4));
+makelist(is_isomorphic(line_graph (complete_bipartite_graph (1, i)),complete_graph(i)),i,10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Mycielskian
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Beginning from path_graph(2) the iterated application of Mycielskian construction reaches the Grötzsch graph (but does not end there).
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(mycielski_graph(path_graph(2)),cycle_graph(5));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(mycielski_graph(cycle_graph(5)),grotzch_graph());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(path_graph (2),transform=true)),
+    gr2d(draw_graph(cycle_graph(5),transform=true)),
+    gr2d(draw_graph(grotzch_graph(),transform=true)),
+    columns=3
+);
 /* [wxMaxima: input   end   ] */
 
 
