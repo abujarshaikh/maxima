@@ -13,3 +13,5 @@ https://www.opensourceforu.com/2014/12/learn-how-to-visualise-graph-theory/
 https://pphmjopenaccess.com/index.php/aadm/article/view/409/372
 
 https://www.researchgate.net/publication/370209054_IMPLEMENTATION_OF_GRAPH_THEORY_AND_APPLICATION_BY_MAXIMA_SOFTWARE
+
+https://docplayer.es/34871894-Grafos-creacion-de-indices-en-google-de-los-sitios-de-la-red-de-internet.html
