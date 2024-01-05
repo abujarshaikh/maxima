@@ -18,6 +18,8 @@ https://docplayer.es/34871894-Grafos-creacion-de-indices-en-google-de-los-sitios
 
 ## More advanced approach
 
+https://gist.github.com/MHenderson/462eb071cb80151ad133
+
 https://mjhdata.netlify.app/tags/maxima/
 
 In these posts are examples that can be used with Maxima.
