@@ -16,6 +16,14 @@ https://www.researchgate.net/publication/370209054_IMPLEMENTATION_OF_GRAPH_THEOR
 
 https://docplayer.es/34871894-Grafos-creacion-de-indices-en-google-de-los-sitios-de-la-red-de-internet.html
 
+https://domeuclidiano.blogspot.com/2012/07/graphs-para-matematicas-discretas.html
+
+https://lib.iitta.gov.ua/1121/1/8.pdf
+
+https://core.ac.uk/download/pdf/155244046.pdf
+
+https://journal.iitta.gov.ua/index.php/itlt/article/view/1550/1140
+
 ## More advanced approach
 
 https://gist.github.com/MHenderson/462eb071cb80151ad133
@@ -25,3 +33,9 @@ https://mjhdata.netlify.app/tags/maxima/
 In these posts are examples that can be used with Maxima.
 
 Predicate functions for Moore graphs and an exposition of Euler and graphs.
+
+### Discrete matematics textbooks
+
+https://digibug.ugr.es/bitstream/handle/10481/43098/BurgosNavarro_MatDiscretaAlgLineal.pdf?sequence=6&isAllowed=y
+
+https://riuma.uma.es/xmlui/bitstream/handle/10630/25954/Discreta22.pdf?sequence=1
