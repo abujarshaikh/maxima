@@ -34,7 +34,7 @@ In these posts are examples that can be used with Maxima.
 
 Predicate functions for Moore graphs and an exposition of Euler and graphs.
 
-### Discrete matematics textbooks
+### Discrete mathematics textbooks
 
 https://digibug.ugr.es/bitstream/handle/10481/43098/BurgosNavarro_MatDiscretaAlgLineal.pdf?sequence=6&isAllowed=y
 
