@@ -26,13 +26,15 @@ https://journal.iitta.gov.ua/index.php/itlt/article/view/1550/1140
 
 ## More advanced approach
 
+https://gist.github.com/louisswarren/b357f49bd7c48d099c7f1dc3b49da816
+
 https://gist.github.com/MHenderson/462eb071cb80151ad133
 
 https://mjhdata.netlify.app/tags/maxima/
 
 In these posts are examples that can be used with Maxima.
 
-Predicate functions for Moore graphs and an exposition of Euler and graphs.
+Functions for graphs and an exposition of Euler and graphs.
 
 ### Discrete mathematics textbooks
 
