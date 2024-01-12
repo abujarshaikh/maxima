@@ -40,6 +40,8 @@ Functions for graphs and an exposition of Euler and graphs.
 
 https://github.com/lolesvalverde/MDenHaskell/blob/master/auxiliares/Correspondencia_con_Maxima.org
 
+https://www.ugr.es/~pedro/mdal/mdal.pdf
+
 https://digibug.ugr.es/bitstream/handle/10481/43098/BurgosNavarro_MatDiscretaAlgLineal.pdf?sequence=6&isAllowed=y
 
 https://riuma.uma.es/xmlui/bitstream/handle/10630/25954/Discreta22.pdf?sequence=1
