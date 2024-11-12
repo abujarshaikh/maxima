@@ -32,6 +32,8 @@ https://gist.github.com/MHenderson/462eb071cb80151ad133
 
 https://mjhdata.netlify.app/tags/maxima/
 
+https://github.com/lolesvalverde/MDenHaskell/blob/master/auxiliares/Ejemplos_con_Maxima.md
+
 In these posts are examples that can be used with Maxima.
 
 Functions for graphs and an exposition of Euler and graphs.
