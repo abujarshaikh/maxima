@@ -1,0 +1,498 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Ejemplos de grafos con Maxima
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: section start ]
+El tipo abstracto de dato de los grafos
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load (graphs)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ejGrafo : create_graph ([1,2,3,4,5],[[1,2],[1,4],[1,5],[2,3],[2,5],[3,4],[3,5],[4,5]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+print_graph (ejGrafo) $
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+neighbors (4,ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+neighbors (3,ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_edge_in_graph ([3,5],ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_edge_in_graph ([5,3],ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_edge_in_graph ([1,3],ejGrafo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Ejemplos de grafos
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+empty_graph (0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+c5 : cycle_graph (5)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (c5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (c5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+k4 : complete_graph (4)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (k4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (k4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+b23 : complete_bipartite_graph (2,3)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (b23);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (b23);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+r5 : wheel_graph (5)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (r5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (r5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+circulante : circulant_graph (6,[1,2])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (circulante);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (circulante);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+p_4_2 : petersen_graph (4,2)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (p_4_2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (p_4_2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Definiciones y propiedades de grafos
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Definiciones de grafos
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+graph_order (cycle_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+graph_size (cycle_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+graph_size (petersen_graph (5,2));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+neighbors (2,create_graph ([1,2,3,4,5],[[1,2],[1,3],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_degree (2,create_graph ([1,2,3,4,5],[[1,2],[1,3],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+min_degree (create_graph ([1,2,3,4],[[1,2],[1,3],[2,4]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+first(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+max_degree (create_graph ([1,2,3,4],[[1,2],[1,3],[2,4]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+first(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_graph (create_graph ([1,2,3],[[1,2],[1,3],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+is_graph (create_graph ([1,2,3],[[1,2],[1,1],[2,3]])); Este código daría el siguiente mensaje de error:
+Argument 1 to add_edge is not an edge (2).
+ -- an error. To debug this try: debugmode(true);
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+degree_sequence (create_graph ([1,2,3,4,5],[[1,2],[1,3],[1,4],[2,4]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Operaciones y propiedades sobre grafos
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g : create_graph ([1,2,3,4],[[1,2],[1,4],[2,4]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+remove_edge ([1,4],g)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g : create_graph ([1,2,3,4],[[1,2],[1,3],[2,4]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+remove_edge ([1,3],g)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g : create_graph ([1,2,3,4],[[1,2],[1,4],[2,4]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+remove_vertex (1,g)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertices (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g : cycle_graph (5)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+add_edge([0,2],g)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+edges (g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g1 : create_graph ([1,2,3,4], [[1,3],[2,3]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g2: complement_graph (g1)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+[vertices (g2), edges (g2)];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Morfismos
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+shortest_path (0,3,cycle_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+shortest_path (3,0,cycle_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+shortest_path (1,4,create_graph ([1,2,3,4],[[1,2],[3,4]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g : create_graph ([1,2,3,4],[[1,2],[2,3]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_distance (1,1,g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_distance (1,2,g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_distance (1,3,g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_distance (1,4,g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g1 : create_graph ([1,2,3,4,5],[[1,2],[2,3]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+connected_components (g1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g2 : create_graph ([1,2,3,4,5],[[1,2],[2,3],[4,5]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+connected_components (g2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g1 : create_graph ([1,2,3],[[1,2],[2,3]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_connected (g1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g2 : create_graph ([1,2,3,4,5],[[1,2],[2,3],[4,5]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_connected (g2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g1: create_graph ([1,2,3], [[1,2],[2,3]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_eccentricity (1,g1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vertex_eccentricity (2,g1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g2: create_graph ([1,2,3,4], [[1,2],[2,3]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+vertex_eccentricity (2,g2); Este código daría el siguiente mensaje de error:
+eccentricity: graph is not connected.
+ -- an error. To debug this try: debugmode(true);
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diameter (create_graph ([1,2,3],[[1,2],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+diameter (create_graph ([1,2,3],[[1,2]])); Este código daría el siguiente mensaje de error:
+eccentricity: graph is not connected.
+ -- an error. To debug this try: debugmode(true);
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+radius (create_graph ([1,2,3],[[1,2],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+radius (create_graph ([1,2,3],[[1,2]])); Este código daría el siguiente mensaje de error:
+eccentricity: graph is not connected.
+ -- an error. To debug this try: debugmode(true);
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+graph_center (create_graph ([1,2,3],[[1,2],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+graph_center (create_graph ([1,2,3],[[1,2],[1,3],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+girth (cycle_graph (5));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+girth (complete_graph (5));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+girth (create_graph ([1,2,3],[[1,2],[2,3]]));
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
