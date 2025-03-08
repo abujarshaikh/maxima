@@ -1,0 +1,452 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Working with graphs in Maxima
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+I have started this without having taken a course in graph theory before.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Graphs with zero or single argument
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+There is an analogue of the empty list, set or matrix; that is new_graph().
+
+Some of the graphs with sero or single argument are random.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(random_tree (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(path_graph (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(cycle_graph (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(wheel_graph(10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(complete_graph (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(flower_snark (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(random_tournament (10));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Special graphs with zero argument
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(heawood_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(heawood_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph( frucht_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(frucht_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(clebsch_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(clebsch_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(grotzch_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(grotzch_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(tutte_graph());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(tutte_graph()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Graphs related to polytopes
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Here are shown these graphs and a image from their adjacency matrices.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(dodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(icosahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(icosahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_cube_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_cube_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(snub_cube_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(snub_cube_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_tetrahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_tetrahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_dodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(snub_dodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(snub_dodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(truncated_icosahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(truncated_icosahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(icosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(icosidodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(small_rhombicuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(small_rhombicuboctahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(great_rhombicuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(great_rhombicuboctahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(small_rhombicosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(small_rhombicosidodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(great_rhombicosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(great_rhombicosidodecahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(cube_graph (4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(cube_graph (4)),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* The documentation does not say that the function is of zero argument, but this works */
+draw_graph(cuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(image(adjacency_matrix(cuboctahedron_graph ()),0,0,30,30));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Complete bipartite graphs and trees
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+The complete bipartite graphs of the form complete_bipartite_graph (1, n) with n a positive integer are trees (actually, they are star graphs).
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_tree(complete_bipartite_graph(1,i)),i,20);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Complement graph
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Edgeless graphs and complete graphs
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+The complement graph of and edgeless graph is a complete graph, and viceversa.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_isomorphic(complement_graph(empty_graph(i)),complete_graph(i)),i,20);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(complement_graph(empty_graph(5)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+The line graph of a graph
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+The following is based on https://mathworld.wolfram.com/LineGraph.html
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot_size:[400,200]$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(complete_bipartite_graph (1, 3),transform=true)),
+    gr2d(draw_graph(cycle_graph(3),transform=true)),
+    columns=2
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(line_graph (complete_bipartite_graph (1, 3)),cycle_graph(3));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(cube_graph (3),transform=true)),
+    gr2d(draw_graph(cuboctahedron_graph (),transform=true)),
+    columns=2
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(line_graph (cube_graph (3)),cuboctahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(cycle_graph(3),transform=true)),
+    gr2d(draw_graph(cycle_graph(3),transform=true)),
+    columns=2
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_isomorphic(line_graph (cycle_graph(i)),cycle_graph(i)),i,3,10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(dodecahedron_graph (),transform=true)),
+    gr2d(draw_graph(icosidodecahedron_graph (),transform=true)),
+    columns=2
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(line_graph (dodecahedron_graph ()),icosidodecahedron_graph ());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(path_graph(2),transform=true)),
+    gr2d(draw_graph(empty_graph(1),transform=true)),
+    columns=2
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_isomorphic(line_graph (path_graph(i+1)),path_graph(i)),i,10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(complete_bipartite_graph (1, 4),transform=true)),
+    gr2d(draw_graph(complete_graph(4),transform=true)),
+    columns=2
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist(is_isomorphic(line_graph (complete_bipartite_graph (1, i)),complete_graph(i)),i,10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Mycielskian
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Beginning from path_graph(2) the iterated application of Mycielskian construction reaches the Grötzsch graph (but does not end there).
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(mycielski_graph(path_graph(2)),cycle_graph(5));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_isomorphic(mycielski_graph(cycle_graph(5)),grotzch_graph());
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw(
+    gr2d(draw_graph(path_graph (2),transform=true)),
+    gr2d(draw_graph(cycle_graph(5),transform=true)),
+    gr2d(draw_graph(grotzch_graph(),transform=true)),
+    columns=3
+);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

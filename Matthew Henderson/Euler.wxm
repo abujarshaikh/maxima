@@ -1,0 +1,90 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+defstruct(graph(V,E));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+konigsberg:new(graph({A,B,C,D},
+                          {[a,{A,B}],
+                           [b,{A,B}],
+                           [c,{A,C}],
+                           [d,{A,C}],
+                           [e,{A,D}],
+                           [f,{B,D}],
+                           [g,{C,D}]}))$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+konigsberg@V;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+konigsberg@E;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+assoc(a, konigsberg@E);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+path(G, P):= block(
+ [result: true],
+ for i: 2 step 2 thru (length(P)-1) do (
+   result: result and is({P[i-1], P[i+1]} = assoc(P[i], G@E))
+ ),
+ return(result)
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+euler_path(G, P):= (
+ is(path(G, P)) and is(length(P) = 2*length(G@E) + 1)
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eulersberg:new(graph({A,B,C,D,E,F},
+                          {[a,{E,F}],
+                           [b,{B,F}],
+                           [c,{B,F}],
+                           [d,{A,F}],
+                           [e,{A,F}],
+                           [f,{C,F}],
+                           [g,{A,C}],
+                           [h,{A,C}],
+                           [i,{C,D}],
+                           [k,{A,D}],
+                           [l,{D,E}],
+                           [m,{A,E}],
+                           [n,{A,E}],
+                           [o,{B,E}],
+                           [p,{A,B}]}))$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+s: "EaFbBcFdAeFfCgAhCiDkAmEnApBoElD";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+journey: map(eval_string, charlist(s))$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+euler_path(eulersberg, journey);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

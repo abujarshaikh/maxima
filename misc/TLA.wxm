@@ -1,0 +1,224 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+load(graphs);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 3";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4], [[1,2],[2,3],[1,3],[2,4]])$
+print_graph(g)$
+draw_graph(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 4";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 5";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 7";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 8";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 3 PAG 538";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3], [[1,2],[2,3]])$
+print_graph(g)$
+is_connected(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4],[[1,4],[3,4]])$
+print_graph(g)$
+is_connected(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 4 PAG 538";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6,7,8,9,10,11],[[1,2],[1,3],[2,8],[3,7],[3,9],[4,8],[4,10],[5,9],[5,11],[6,10]])$
+print_graph(g)$
+is_connected(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 5 PAG 538";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,5],[1,3],[2,6],[2,4],[3,5],[4,6]])$print_graph(g)$
+is_connected(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 6 PAG 538";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"3";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3], [[1,2],[2,3]])$
+print_graph(g)$
+connected_components(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4],[[1,4],[3,4]])$
+print_graph(g)$
+connected_components(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"4";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6,7,8,9,10,11],[[1,2],[1,3],[2,8],[3,7],[3,9],[4,8],[4,10],[5,9],[5,11],[6,10]])$
+print_graph(g)$
+connected_components(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"5";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,5],[1,3],[2,6],[2,4],[3,5],[4,6]])$
+print_graph(g)$
+connected_components(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"EJERCICIO 1 pag 598";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"a";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,4],[2,4],[2,5],[3,5],[3,6]])$
+print_graph(g)$
+is_tree(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"b";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,4],[2,4],[3,5],[3,6]])$
+print_graph(g)$
+is_tree(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"c";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,4],[2,5],[2,3],[3,6],[4,5]])$
+print_graph(g)$
+is_tree(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"d";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,4],[2,4],[2,5],[3,5],[3,6],[4,5]])$
+print_graph(g)$
+is_tree(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"e";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6,7],[[1,4],[2,4],[3,4],[5,4],[6,4],[7,4]])$
+print_graph(g)$
+is_tree(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"f";
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$
+g:create_graph([1,2,3,4,5,6],[[1,4],[1,6],[2,4],[2,5],[3,5],[3,6]])$
+print_graph(g)$
+is_tree(g);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

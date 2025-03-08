@@ -1,0 +1,687 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Graphentheorie 1
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Mathematik in wxMaxima www.mathematik-verstehen.de Haftendorn April 2011
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Handling
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Achtung: Durch Anklicken der linken Zellmarkierung kann man die 
+Abschnitte und auch einzelne Zellen aufklappen und auch wieder zuklappen.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Endung *.wxmx ist komfortabel. Ist die Endung *.wxm muss man 
+erst noch alle Ausgaben neu erzeugen. Mit Strg r  werden alle aufgeklappten Zellen ausgewertet.
+Zum Lernen ist es besser die Zellen einzeln (mit Shift+Enter) auszuwerten.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Werte einzelne Zellen aus mit Shift-Enter. 
+Auswertung in einem Rutsch: Falte alle Abschnitte auf,
+werte alle Zellen mit Strg r aus ( auch Menu Cell Alle Zellen auswerten).
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Inhalt
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+1 Graphen erzeugen und zeichnen, 
+          dort wichtige Funktionen abschicken!
+1.1 Spielwiese zum Ausprobieren
+1.2 Einige Zufallsgraphen zum Lernen
+1.3 Reparatur bei der Adjazenzmatix
+1.4 Anzeige der Adjazenzmatix und Graphenerzeugung aus ihr.
+2 Erzeugung eigener Graphen mit Gewichtung
+2.1 Kleiner gewichteter Graph
+2.2 Spannbaum und kürzester Weg im Lüneburg-Graphen (mein Buch S.64)
+2.3 Spannbaum und kürzester Weg im Dijkstra-Graphen (mein Buch S.65) 
+2.4 Weitere Graphen und Spannbäume
+3 Bipartite und vollständige Graphen
+3.1 Erzeugung bipartiter Graphen und Zeichnung
+3.2 Vollständige Graphen 
+4 Graphen mit besonderen Namen
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Graphen erzeugen und zeichnen
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(graphs)$ 
+load(draw)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Diese beiden Bibliotheken muss man unbedingt zu Beginn laden. (doppelt abschicken!)
+In der Hilfe findet man mit dem Suchwort graphs das Kapitel 53.
+Dort stehen alle Funktionen zum Erzeugen, Zeichnen und Untersuchen von Graphen.
+Hier treffe ich eine Auswahl, die zu meinem Lehrplan (Fachwissenschaft, Gym-Lehramt) passt.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+my:random_graph(5,0.3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Hier wird ein Zufallsgraph mit 5 ecken erzeugt, bei dem zufällig 
+30% der möglichen Kanten gesetzt werden 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(my,vertex_size=3,show_edges=edges(my),show_edge_width=4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Im Zeichenbefehl sind gleich noch einige Eigenschaften gesetzt.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Reparaturfunktion abschicken !!!
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+adjazenz_matrix(g):=block(local(A,BB,i,j,li),
+             A:adjacency_matrix(g),
+             li:matrix_size(A),
+             array(BB,fixnum,li[1],li[2]),
+             for i:1 thru li[2] do 
+                 for j:1 thru li[1] do 
+                     BB[i,j]:A[li[1]-i+1,li[2]-j+1],
+                  endfor,
+              endfor, 
+   genmatrix(BB,li[1],li[2])
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Spielwiese zum Ausprobieren
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sp:my:random_graph(5,0.6)$
+draw_graph(sp,vertex_size=3,show_id=true,
+                       show_edges=edges(my),show_edge_width=4)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Einige Graphen zum Lernen 
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Achtung, bei erneuter Auswertung würden diese Graphen sich verändern!
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+my:random_graph(10,0.3)
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(my,vertex_size=3,show_edges=edges(my),show_edge_width=4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+my:random_graph(10,0.4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(my,vertex_size=3,show_id=true,
+show_edges=edges(my),show_edge_width=4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+my:random_graph(10,0.2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(my,vertex_size=3,show_id=true,
+show_edges=edges(my),show_edge_width=4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+my:random_graph(10,0.3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(my);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Von dem nachfolgenden Eintrag aus der Hilfe habe ich die Optionen abgeguckt.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g:create_graph(16,
+    [
+     [0,1],[1,3],[2,3],[0,2],[3,4],[2,4],
+     [5,6],[6,4],[4,7],[6,7],[7,8],[7,10],[7,11],
+ [8,10],[11,10],[8,9],[11,12],[9,15],[12,13],
+     [10,14],[15,14],[13,14]
+    ])$
+ t:minimum_spanning_tree(g)$
+draw_graph(g,
+    show_edges=edges(t), show_edge_width=4,
+    show_edge_color=green,    
+    vertex_type=filled_square, vertex_size=2
+    )$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+my:random_graph(10,0.4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(my,vertex_size=3,show_id=true,
+show_edges=edges(my),show_edge_width=4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Reparatur der Anzeige der Adjazenzmatrix und 
+Erzeugen mit einer Adjazenzmatix
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mya:random_graph(5,0.7)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(mya,show_id=true)$
+print_graph(mya);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Amya:adjacency_matrix(mya);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Offenbar sind die Nummern rückwärts sortiert.
+Das ging auch aus den Beispielen hervor.
+Also: die Ecken 4 und 2 sind mit allen anderen verbunden.
+3, 1 und 0 nur mit 4 und 3.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Davon nun wieder einen Graphen machen:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+GAmya:from_adjacency_matrix (Amya)$
+draw_graph(GAmya,show_id=true, edge_color=green, edge_width=3);
+AGAmya:adjacency_matrix(GAmya);Amya;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Dies ist nicht derselbe Graph: Beim Erzeugen wird vorwärts sortiert,
+beim Ausgeben rückwärts.
+Die beiden Matrizen sind Spiegelungen von einander an der Nebendiagonalen.
+Darum scheibe ich mir eine Funktion die ausgebene Adjazenzmatrizen richtig
+ausgibt. 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+adjazenz_matrix(g):=block(local(A,BB,i,j,li),
+             A:adjacency_matrix(g),
+             li:matrix_size(A),
+             array(BB,fixnum,li[1],li[2]),
+             for i:1 thru li[2] do 
+                 for j:1 thru li[1] do 
+                     BB[i,j]:A[li[1]-i+1,li[2]-j+1],
+                  endfor,
+              endfor, 
+   genmatrix(BB,li[1],li[2])
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(mya,show_id=true)$
+print_graph(mya);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Aok:adjazenz_matrix(mya);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(from_adjacency_matrix(Aok),show_id=true);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Nun kommt also wieder dasselbe heraus.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Anzeige der Adjazenzmatrix und 
+Erzeugen mit einer Adjazenzmatix
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Aufstellen einer Matrix
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:matrix( [0,1,0,1,1],[1,0,1,1,1],[0,1,0,1,0] ,[1,1,1,0,0] ,[1,1,0,1,0]    );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+amy:from_adjacency_matrix (A)$
+draw_graph(amy,show_id=true, edge_color=green, edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+print_graph(amy);adjazenz_matrix(amy);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Erzeugung eigener Graphen mit Gewichtung
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Kleiner gewichteter Graph
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g : create_graph([0,1,2,3],[[[0,1], 1], [[1,2], 2], [[2,3], 3],
+                          [[3,0], 4],[[0,2], 5]])$
+draw_graph(g,show_id=true, edge_color=green,
+                edge_width=2,show_weight=true);
+print_graph(g)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:adjazenz_matrix(g); AA:adjacency_matrix(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Die reparierte Adjazenzmatix ist richtig, 
+die vom Originalbefehl ausgegebene Adjazenzmatrix ist rückwärts sortiert.
+Sie würde beim Konstruieren nicht auf den ursprünglichen Graphen führen. 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Spannbaum und kürzeste Wege im Lüneburg-Graphen, S. 
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eckenglg:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kantenglg:[[[1,2],2],[[1,3],3],[[2,3],3],[[3,4],1],[[4,5],4],[[3,6],1],[[4,7],3],[[5,8],2],[[6,7],2],[[7,8],1],
+[[8,9],2],[[9,10],3],[[10,11],3],[[11,12],1],[[7,13],4],[[8,15],4],[[9,16],5],[[10,16],4],[[13,14],4],[[15,14],2],[[15,16],1]]$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+glg:create_graph(eckenglg,kantenglg)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(glg,show_id=true,show_weight=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+t : minimum_spanning_tree(glg);print_graph(t);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(glg,show_id=true,show_weight=true,edge_color=green,edge_width=3
+            ,show_edges=edges(t),show_edge_color=purple,show_edge_width=5
+        );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+for i:1 thru 16  do print(shortest_weighted_path(14, i, glg)),endfor;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+weglg:[[2,3],[3,6],[6,7],[7,8],[8,15],[15,14]]$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(glg,show_id=true,show_weight=true,edge_color=green,edge_width=3
+            ,show_edges=weglg,show_edge_color=purple,show_edge_width=5
+        );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Der Spannbaum und Dijkstra-Graph aus meinem Buch, S. 65 
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ecken:[[1,"A"],[2,"B"],[3,"C"],[4,"D"],[5,"E"],[6,"F"],[7,"G"],[8,"H"],[9,"I"]];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kanten:[[[1,2],1],[[1,5],9],[[1,4],2],[[2,3],6],[[2,5],7],[[3,6],2],[[3,7],6],
+              [[4,5],5],[[4,8],3],[[5,6],5],[[5,9],2],[[5,8],1],[[6,7],1],[[6,9],2],[[7,9],4],[[8,9],4]]$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+gb:create_graph(ecken,kanten)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(gb,show_label=true,show_weight=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Leider bekomme ich die Schrift nicht größer hin. 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Spannbaum
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+t : minimum_spanning_tree(gb);print_graph(t);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(gb,show_label=true,show_weight=true,edge_color=green,edge_width=3
+        ,show_edges=edges(t),show_edge_color=purple,show_edge_width=5  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+So ist es auch auf Seite 65 gefunden.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Kürzeste Wege direkt von Maxima:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+for i:1 thru 9  do print(shortest_weighted_path(1, i, gb)),endfor;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+weg:shortest_weighted_path(1, 9, gb);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Von Hand habe ich daraus Kantenzüge gemacht.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dijweg:[[1,4], [4,8],[8,5],[5,9]];dijweg2:[[1,2],[2,3],[3,6],[6,7]];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Man kann einen Teilgraphen anders Färben aber leider nicht zwei Teilgraphen.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(gb,show_label=true,show_weight=true,edge_color=green,edge_width=3,
+       show_edges=dijweg,show_edge_color=yellow,show_edge_width=5
+      /* ,show_edges=dijweg2,show_edge_color=purple,show_edge_width=5*/
+        );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(gb,show_label=true,show_weight=true,edge_color=green,edge_width=3
+      /*, show_edges=dijweg,show_edge_color=yellow,show_edge_width=5  */
+       ,show_edges=dijweg2,show_edge_color=purple,show_edge_width=5
+        );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Weitere Graphen und Spannbäume
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+gsp:random_graph(10,0.3)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(gsp,show_id=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Spannbaum
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+t : minimum_spanning_tree(gsp);print_graph(t);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(gsp,show_id=true,show_weight=true,edge_color=green,edge_width=3
+        ,show_edges=edges(t),show_edge_color=purple,show_edge_width=5  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Wenn ich mir das ansehe, glaube ich eher, dass "Tiefensuche" programmiert ist.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Bipartite und vollständige Graphen
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Erzeugung
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+big:random_bipartite_graph (5, 4, 0.8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+[A,B]:bipartition(big);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+print_graph(big);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(big,show_id=true,edge_color=green,edge_width=3,show_vertices=A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(big,show_id=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Noch einmal
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+big:random_bipartite_graph (5, 4, 0.8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(big,show_id=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+[A,B]:bipartition(big);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+print_graph(big);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(big,show_id=true,edge_color=green,edge_width=3,show_vertices=A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Wenn ich mir das so ansehe, ist [0,3,4] zu [8,7,6] ein vollständiger 
+bipartiter Teilgraph. Damit ist der Graph nicht planar. 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_planar(big);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+War ja klar.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Vollständige Graphen
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+bipvo:complete_bipartite_graph (5, 4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(bipvo,show_id=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+[A,B]:bipartition(bipvo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+print_graph(bipvo);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw_graph(bipvo,show_id=true,edge_color=green,edge_width=3,show_vertices=A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vo:complete_graph (7);
+draw_graph(vo,show_id=true,edge_color=green,edge_width=3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Graphen mit besonderen Namen
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Noch nicht ausgeführt. In der Hilfe steht etliches. 
+   [wxMaxima: comment end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
